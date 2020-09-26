@@ -6,6 +6,13 @@ import Button from './components/buttons/buttons.js'
 import AdminLink from './components/links/adminLink.js'
 import 'fontsource-roboto';
 import { makeStyles } from '@material-ui/core/styles';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -28,6 +35,18 @@ function App() {
       </header>
      
     </div>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <h1>Hi</h1>
+          <HomePage />
+        </Route>
+        <Route exact path="/test">
+          <h1>Hello</h1>
+          <HomePage />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
