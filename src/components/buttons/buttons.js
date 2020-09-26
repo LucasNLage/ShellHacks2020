@@ -1,14 +1,18 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import { ThemeProvider} from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import "fontsource-roboto"
+import 'fontsource-roboto';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
     '& > *': {
+      
       margin: theme.spacing(1),
       height: "75px",
       width: "400px",
+      fontSize: 20,
     },
   },
 }));
