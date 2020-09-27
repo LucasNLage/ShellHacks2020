@@ -5,6 +5,7 @@ import HomePage from './components/homepage/homepage.js'
 import VolunteerPage from './components/volunteerpage/volunteerpage.js'
 import CoordinatorPage from './components/coordinatorpage/coordinatorpage.js'
 import EventRegistrationForm from './components/eventRegistration/eventRegistration.js'
+import EventConfirmation from './components/eventconfirmation/eventconfirmation.js'
 import AdminLink from './components/links/adminLink.js'
 import { makeStyles } from '@material-ui/core/styles';
 import AreaPage from "./components/areapage/areapage.js"
@@ -38,7 +39,8 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/">
-            <HomePage />
+            {/* <HomePage /> */}
+            <EventConfirmation />
           </Route>
           <Route path="/volunteerAccessCode">
             <VolunteerPage />
@@ -61,6 +63,12 @@ function App() {
           </Route>
           <Route path="/coordinatorPage">
             <CoordinatorPage />
+          </Route>
+          <Route path="/coordinatorPage">
+            <CoordinatorPage />
+          </Route>
+          <Route path="/areaPage">
+            <AreaPage />
           </Route>
         </Switch>
       </Router >
