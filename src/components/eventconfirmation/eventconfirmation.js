@@ -9,7 +9,8 @@ import { CardMedia, Typography, Grid, Divider, TextField } from '@material-ui/co
 import FileCopyIcon from '@material-ui/icons/FileCopy';
 import {
     Link,
-    useHistory
+    useHistory,
+    useLocation
 } from "react-router-dom";
 
 
@@ -45,7 +46,6 @@ const useStyles = makeStyles((theme) => ({
             height: "75px",
             width: "250px",
             fontSize: 20,
-
         },
     },
 }));
@@ -71,9 +71,10 @@ const theme = createMuiTheme({
 });
 
 //TESTING HOME PAGE
-export default function HomePage() {
+export default function EventConfirmation(props) {
+    const location = useLocation();
     const classes = useStyles();
-
+    console.log("props:", props)
 
     let history = useHistory();
 
@@ -101,7 +102,7 @@ export default function HomePage() {
                 <TextField
                     id="outlined-read-only-input"
                     align="center"
-                    defaultValue="CODEINHERE"
+                    defaultValue={location.state.res.volunteer_access_code}
                     InputProps={{
                         readOnly: true,
                     }}
@@ -109,7 +110,7 @@ export default function HomePage() {
                 />
                 <FileCopyIcon
                     className={classes.icon}
-                    onClick={() => { navigator.clipboard.writeText("Test123") }} />
+                    onClick={() => { navigator.clipboard.writeText(location.state.res.volunteer_access_code) }} />
             </Grid>
             <Grid item>
                 <Typography className={classes.textfields} variant="h6" align="center">Coordinators</Typography>
@@ -117,7 +118,7 @@ export default function HomePage() {
                     id="outlined-read-only-input"
                     className={classes.textfield}
                     align="center"
-                    defaultValue="CODEINHERE"
+                    defaultValue={location.state.res.coordinator_access_code}
                     InputProps={{
                         readOnly: true,
                     }}
@@ -125,7 +126,7 @@ export default function HomePage() {
                 />
                 <FileCopyIcon
                     className={classes.icon}
-                    onClick={() => { navigator.clipboard.writeText("Test123") }} />
+                    onClick={() => { navigator.clipboard.writeText(location.state.res.coordinator_access_code) }} />
             </Grid>
             <Grid item>
                 <Link
