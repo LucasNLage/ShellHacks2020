@@ -66,13 +66,14 @@ export default function Appbar(props) {
                         <IconButton edge="start" className={classes.menuButton} aria-label="menu">
                             <ArrowBackIosIcon className={classes.backIcon} />
                         </IconButton >
-                        {/* <Typography className={classes.title} variant="h6" noWrap>
-                            Event Name
-                        </Typography> */}
-                        <Typography variant="h6" color="inherit">
-                            {props.eventName ? props.eventName : null}
-
+                        <Typography className={classes.title} variant="h6" noWrap>
+                            Coordinator
                         </Typography>
+                        <Typography variant="h6" color="inherit">
+                            {props.eventName ? props.eventName : null} 
+                     </Typography>
+                     <AddIcon/>
+
                     </Toolbar>
                 </AppBar>
                 :
