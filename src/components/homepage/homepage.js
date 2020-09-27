@@ -10,6 +10,8 @@ import { green } from '@material-ui/core/colors';
 import { CardMedia } from '@material-ui/core';
 import AppBar from '../appbar/appbar.js';
 import EventRegistrationForm from '../eventRegistration/eventRegistration.js';
+import { useHistory } from "react-router-dom";
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -50,6 +52,7 @@ const theme = createMuiTheme({
 //TESTING HOME PAGE
 export default function HomePage() {
     const classes = useStyles();
+    let history = useHistory();
 
     return (
         <div className="HomePage-header">
@@ -63,13 +66,13 @@ export default function HomePage() {
             <h4 className="HomePage-started">Let's get started.</h4>
             {/* </header> */}
             <div className="HomePage-button1">
-                <Button  >Volunteer</Button>
+                <Button onClick={()=> history.push("/accesscode")}>Volunteer</Button>
             </div>
             {/* <div className="HomePage-text"> */}
             <p className="HomePage-text">or</p>
             {/* </div> */}
             <div className="HomePage-button2">
-                <Button>Coordinator</Button>
+                <Button onClick={()=> history.push("/accesscode")}>Coordinator</Button>
             </div>
             <ThemeProvider></ThemeProvider>
             <AdminLink />
