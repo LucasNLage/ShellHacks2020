@@ -11,9 +11,16 @@ import Grid from '@material-ui/core/Grid';
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
+    marginTop: 30,
+    marginBottom: 10,
+    background: "rgba(244,244,244)",
+  },
+  selected: {
+    minWidth: 275,
     marginTop: 10,
     marginBottom: 10,
-    background: "#add8e6"
+    background: "rgb(226,248,235)",
+    background: "linear-gradient(180deg, rgba(226,248,235,1) 0%, rgba(226,248,235,1) 40%, rgba(244,244,244,1) 100%)"
   },
   bullet: {
     display: 'inline-block',
@@ -44,7 +51,7 @@ export default function SimpleCard(props) {
     <>
       {selected
         ?
-        <Card className={classes.root} elevation={8} onClick={() => { cardSelect() }}>
+        <Card className={classes.selected} elevation={8} onClick={() => { cardSelect() }}>
           <CardContent>
             <Typography variant="h5" component="h2">
               benevolent
