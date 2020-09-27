@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+
 import HomePage from './components/homepage/homepage.js'
 import VolunteerPage from './components/volunteerpage/volunteerpage.js'
 import CoordinatorPage from './components/coordinatorpage/coordinatorpage.js'
