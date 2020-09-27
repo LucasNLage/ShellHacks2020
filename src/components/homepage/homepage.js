@@ -8,6 +8,11 @@ import {
     Link,
     useHistory
 } from "react-router-dom";
+
+import Button from '@material-ui/core/Button';
+import TaskCard from '../taskcard/taskcard.js'
+import Grid from '@material-ui/core/Grid';
+
 // import Button from '@material-ui/core/Button';
 import Button from '../buttons/buttons.js';
 import AdminLink from '../links/adminLink.js';
@@ -21,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
+
 //TESTING HOME PAGE
 export default function HomePage() {
     const classes = useStyles();
@@ -31,12 +37,38 @@ export default function HomePage() {
                 {/* <RegistrationForm></RegistrationForm> */}
                 <h1>Welcome to TaskMe</h1>   
 
+
+    let history = useHistory()
+    return (
+        <div>
+            <Grid
+                container
+                direction="column"
+                justify="space-between"
+                alignItems="center"
+            >
+                <Grid item spacing={10}>
+                    <TaskCard />
+                </Grid>
+                <Grid item spacing={3}>
+                    <TaskCard />
+                </Grid>
+                <Grid item spacing={3}>
+                    <TaskCard />
+                </Grid>
+                <Grid item spacing={3}>
+                    <TaskCard />
+                </Grid>
+            </Grid>
+        </div>
+
                 <Button title='Volunteer'/>
                 <p>or</p>
                 <Button title='Coordinator'/>
                 <AdminLink/>
          </header>
     </div>
+
     );
     // let history = useHistory()
     // return (
