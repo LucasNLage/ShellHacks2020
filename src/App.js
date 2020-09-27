@@ -21,21 +21,8 @@ import {
   Link
 } from "react-router-dom";
 
-// 165.22.38.77:3001
 
 function App() {
-  // Create WebSocket connection.
-  const socket = new WebSocket('ws://165.22.38.77:3002/bananas');
-
-  // Connection opened
-  socket.addEventListener('open', function (event) {
-    socket.send('Hello Server!');
-  });
-
-  // Listen for messages
-  socket.addEventListener('message', function (event) {
-    console.log('Message from server ', event.data);
-  });
   return (
     <div>
       <Router>
@@ -43,6 +30,7 @@ function App() {
           <Route exact path="/">
             <HomePage />
             {/* <EventConfirmation /> */}
+            {/* <VolunteerPage /> */}
           </Route>
           <Route path="/accesscode">
             <AccessCodePage />
@@ -59,7 +47,7 @@ function App() {
           <Route path="/taskRegistration">
             <TaskRegistration />
           </Route>
-          <Route path="/volunteerPage">
+          <Route path="/volunteer">
             <VolunteerPage />
           </Route>
           <Route path="/coordinatorPage">
