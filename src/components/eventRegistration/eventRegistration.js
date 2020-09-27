@@ -6,9 +6,9 @@ import DateAndTimePickers from '../datePicker/datePicker.js'
 import InputAdornment from '@material-ui/core/InputAdornment'
 import Button from '@material-ui/core/Button';
 import axios from "axios"
-import './eventRegistration.css';
 import { useState } from 'react';
 import Grid from '@material-ui/core/Grid';
+import AppBar from '../appbar/appbar.js';
 
 
 const utilStyles = makeStyles((theme) => ({
@@ -20,8 +20,6 @@ const utilStyles = makeStyles((theme) => ({
       marginBottom: '20px',
       // backgroundColor: "#F1F1F1",
       opacity: "0.90",
-
-      // color: "#263238",
     },
   },
   date: {
@@ -30,20 +28,22 @@ const utilStyles = makeStyles((theme) => ({
   margin: {
     marginTop: '10px',
     marginBottom: '10px',
-    width: '18ch',
+    width: '20ch',
     background: "#F1F1F1",
     opacity: "0.90",
 
   },
   title: {
-    margin: '80px',
+    margin: '20px',
     fontSize: '30px',
     textAlign: "center",
   },
   button: {
     marginTop: '40px',
+    width: '110px',
+    height: '40px',
     backgroundColor: "#27AE60",
-
+    color: '#FFFFFF'
   },
 
 }));
@@ -78,25 +78,28 @@ export default function EventRegistrationForm() {
   }
 
 
-  return (
-    <Grid
-      container
-      direction="column"
-      justify="center"
-      alignItems="center"
-    >
-      <Grid item>
-        <p className={utilStyle.title}
-        >New Event</p>
-      </Grid>
-      <Grid item>
-        <TextField
-          className={utilStyle.margin}
-          value={eventInput}
-          onInput={e => setEventInput(e.target.value)}
-          id="event-name"
-          label="Event Name"
-        />
+
+  return(
+  <Grid
+    container
+    direction="column"
+    justify="center"
+    alignItems="center"
+  >
+    <AppBar/>
+    <Grid item>
+      <p className={utilStyle.title}
+>Registration Form</p>
+    </Grid>
+    <Grid item>
+       <TextField 
+            className={utilStyle.margin}
+            value={eventInput}
+            onInput={e => setEventInput(e.target.value)}
+            id="event-name"
+            label="Event Name"
+          />
+
         {console.log("Event:", eventInput)}
       </Grid>
       <Grid item>
