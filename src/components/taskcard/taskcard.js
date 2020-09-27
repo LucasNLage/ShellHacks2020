@@ -51,7 +51,7 @@ export default function SimpleCard(props) {
         <Card className={classes.selected} elevation={8} onClick={() => { cardSelect() }}>
           <CardContent>
             <Typography variant="h5" component="h2">
-              benevolent
+            {props.task.name}
             </Typography>
             <Typography variant="body2" component="p">
               "other card"
@@ -71,7 +71,7 @@ export default function SimpleCard(props) {
               </Grid>
               <Grid item xs={2}>
                 <Typography color="textSecondary">
-                  3/5
+                  {props.task.current_volunteers+"/"+props.task.volunteer_limit}
                 </Typography>
               </Grid>
             </Grid>
@@ -81,7 +81,7 @@ export default function SimpleCard(props) {
         <Card className={classes.root} onClick={() => { cardSelect() }} >
           <CardContent>
             <Typography variant="h5" component="h2">
-              benevolent
+              {props.task.name}
             </Typography>
             <Typography variant="body2" component="p">
               "place holder for task"
@@ -100,8 +100,8 @@ export default function SimpleCard(props) {
               <Grid item xs={8}>
               </Grid>
               <Grid item xs={2}>
-                <Typography color="textSecondary">
-                  3/5
+              <Typography color="textSecondary">
+                  {props.task.current_volunteers+"/"+props.task.volunteer_limit}
                 </Typography>
               </Grid>
             </Grid>
