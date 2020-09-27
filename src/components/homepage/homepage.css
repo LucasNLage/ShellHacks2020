@@ -4,7 +4,7 @@
   
   
   .HomePage-header {
-    background-color: #1f036d;
+    background-color: #ffffff;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -17,5 +17,67 @@
   .HomePage-link {
     color: #61dafb;
   }
+
+  .HomePage-button1{
+    position: absolute;
+    background: #27AE60;
+    box-shadow: 0px 4px 4px rgba(154, 154, 154, 0.25);
+    top: 289px;
+
+    border-radius: 10px;
+  }
+
+  .HomePage-button2{
+    position: absolute;
+    background: #27AE60;
+    box-shadow: 0px 4px 4px rgba(154, 154, 154, 0.25);
+    top: 400px;
+
+    border-radius: 10px;
+  }
   
+  .HomePage-welcome{
+    position: absolute;
+    width: 375px;
+    height: 38px;
+    left: calc(50% - 375px/2);
+    top: 100px;
+    
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 40px;
+    /* or 58% */
+    
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.15px;
+    color: #000000;
+  }
+
+  .HomePage-started{
+    position: absolute;
+    width: 375px;
+    height: 38px;
+    left: 100px;
+    top: 170px;
+    
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 40px;
+    /* or 58% */
+    
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.15px;
+    color: #000000;
+  }
   
+  .HomePage-text{
+    position: absolute;
+    color: #000000;
+    top: 335px;
+  }
