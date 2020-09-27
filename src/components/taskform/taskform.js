@@ -37,16 +37,20 @@ const utilStyles = makeStyles((theme) => ({
 
     },
     title: {
-        margin: '80px',
-        fontSize: '30px',
-        textAlign: "center",
+        marginTop: '40px',
     },
     button: {
         marginTop: '40px',
         backgroundColor: "#27AE60",
 
     },
-
+    image: {
+        marginTop: '70px',
+        height: '300px',
+        width: '382px',
+        alignSelf: 'center',
+    
+      },
 }));
 
 
@@ -88,20 +92,20 @@ export default function EventRegistrationForm() {
                     <p className={utilStyle.title}
                     >New Task</p>
                 </Grid> */}
-                <Grid item>
+                <Grid item className={utilStyle.title}>
                     <TextField
                         className={utilStyle.margin}
                         value={taskInput}
                         onInput={e => setTaskInput(e.target.value)}
                         id="Task-name"
-                        label="Task Name"
+                        label="Task name?"
                     />
                 </Grid>
                 <Grid item>
                     <TextField
                         className={utilStyle.margin}
                         id="description"
-                        label="Description"
+                        label="Description?"
                         value={description}
                         onInput={e => setDescription(e.target.value)}
                     />
@@ -110,7 +114,7 @@ export default function EventRegistrationForm() {
                     <TextField
                         className={utilStyle.margin}
                         id="maxVol"
-                        label="maxVol"
+                        label="How many volunteers?"
                         value={maxVol}
                         onInput={e => setMaxVol(e.target.value)}
                     />
@@ -119,7 +123,7 @@ export default function EventRegistrationForm() {
                     <TextField
                         className={utilStyle.margin}
                         id="location"
-                        label="Location"
+                        label="Location?"
                         value={locationInput}
                         onInput={e => setLocationInput(e.target.value)}
                     />
@@ -129,7 +133,9 @@ export default function EventRegistrationForm() {
                         className={utilStyle.button}
                         onClick={() => { handleSubmit() }}>Submit</Button>
                 </Grid>
-                
+                <Grid item>
+                     <img className={utilStyle.image} src="/images/help.png"></img>
+                </Grid>
             </Grid>
         </>
     );

@@ -16,6 +16,13 @@ const useStyles = makeStyles((theme) => ({
   root: {
     marginTop: 40,
   },
+  button: {
+    marginTop: '40px',
+    width: '110px',
+    height: '40px',
+    backgroundColor: "#27AE60",
+    color: '#FFFFFF'
+  },
 }));
 
 function AccessCodePage(props) {
@@ -43,7 +50,7 @@ function AccessCodePage(props) {
 
     return (
       <>
-        <Appbar type="coordinator" />
+        <Appbar title={location.state.role} />
           <form onSubmit={handleSubmit}>
           <Grid container
                 direction="column"
@@ -78,9 +85,10 @@ function AccessCodePage(props) {
                />
             </Grid>
             <Grid>
-            <Button type="submit">
+            <Button className={classes.button} type="submit">
               Submit
             </Button>
+          
             </Grid>
           </Grid >
           </form>
