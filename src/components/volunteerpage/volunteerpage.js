@@ -30,7 +30,7 @@ export default function VolunteerPage() {
 
   return (
     <div>
-      <Appbar type="volunteer" />
+      <Appbar type="Volunteer" />
       <Grid
           container
           direction="column"

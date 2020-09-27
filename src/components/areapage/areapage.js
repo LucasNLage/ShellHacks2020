@@ -16,7 +16,7 @@ function AreaPage(props) {
 
   return (
     <div>
-      <Appbar type="volunteer" />
+      <Appbar title="Volunteer" />
       <Grid
           container
           direction="column"

@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     string: {
         marginTop: '20px',
         marginBottom: '20px',
-      fontSize: '20px',
+        fontSize: '20px',
     },
     welcome: {
         margin: '30px',
@@ -51,6 +51,10 @@ const useStyles = makeStyles((theme) => ({
     image: {
         marginTop: '10px',
         height: '200px',
+    },
+    link: {
+        alignItems: "center",
+        color: "#27AE60",
     }
 
 }));
@@ -93,30 +97,9 @@ export default function HomePage() {
         </Button>
     </Grid>
     <Grid item className={classes.padding}>
-        <AdminLink  /> 
+        <AdminLink /> 
     </Grid>
 
-    {/* <div className="HomePage-header"> 
-     <CardMedia 
-        style={{ height: 100, paddingTop: '56.25%' }}
-            image={GreenImage}
-            title="lorem ipsum"
-       />
-        <header className="HomePage-header"> */}
-         {/* <h1 className="HomePage-welcome">Welcome to TaskMe</h1>
-        <h4 className="HomePage-started">Let's get started.</h4>
-        </header> 
-        <div className="HomePage-button1"> */}
-               {/* <Button  >Volunteer</Button>
-             </div>
-            <div className="HomePage-text"> 
-         <p className="HomePage-text">or</p> 
-         </div> 
-         <div className="HomePage-button2"> 
-         <Button>Coordinator</Button> 
-          </div> 
-         <AdminLink />  
-        </div>  */}
     </Grid>
     ); 
 }
