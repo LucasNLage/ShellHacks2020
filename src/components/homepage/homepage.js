@@ -66,13 +66,13 @@ export default function HomePage() {
             <h4 className="HomePage-started">Let's get started.</h4>
             {/* </header> */}
             <div className="HomePage-button1">
-                <Button onClick={()=> history.push("/accesscode")}>Volunteer</Button>
+                <Button onClick={()=> history.push("/accesscode", {role: "Volunteer"})}>Volunteer</Button>
             </div>
             {/* <div className="HomePage-text"> */}
             <p className="HomePage-text">or</p>
             {/* </div> */}
             <div className="HomePage-button2">
-                <Button onClick={()=> history.push("/accesscode")}>Coordinator</Button>
+                <Button onClick={()=> history.push("/accesscode", {role: "Coordinator"})}>Coordinator</Button>
             </div>
             <ThemeProvider></ThemeProvider>
             <AdminLink />

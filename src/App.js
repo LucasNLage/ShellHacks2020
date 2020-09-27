@@ -44,6 +44,9 @@ function App() {
           <Route path="/accesscode">
             <AccessCodePage /> 
           </Route>
+          <Route path="/areas">
+            <AreaPage/>
+          </Route>
           <Route path="/event">
             <EventRegistrationForm />
           </Route>

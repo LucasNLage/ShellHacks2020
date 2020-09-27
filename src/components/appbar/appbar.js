@@ -56,8 +56,6 @@ export default function Appbar(props) {
 
 
     let appbarType = props;
-    // console.log("props", props)
-    // console.log("appbarType", appbarType)
     return (
         <>
             {(props.type === "coordinator")
@@ -68,7 +66,7 @@ export default function Appbar(props) {
                             <MenuIcon />
                         </IconButton>
                         <Typography variant="h6" color="inherit">
-                            Event Name1
+                            {props.eventName ? props.eventName : null}
                     </Typography>
                     </Toolbar>
                 </AppBar>
