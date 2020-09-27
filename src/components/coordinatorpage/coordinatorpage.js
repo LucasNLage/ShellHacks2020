@@ -27,7 +27,6 @@ export default function VolunteerPage() {
                 </Grid>
             </Grid >
         </div>
-
     )
 
 }

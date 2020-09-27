@@ -22,7 +22,8 @@ const useStyles = makeStyles((theme) => ({
       // backgroundColor: theme.palette.background.paper,
       margin: theme.spacing(1),
       fontSize: 10,
-      color: "rgba(226,248,235,1)",
+      color: "#27AE60",
+
     },
   },
 }));

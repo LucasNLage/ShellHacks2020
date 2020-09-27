@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import HomePage from './components/homepage/homepage.js'
 import VolunteerPage from './components/volunteerpage/volunteerpage.js'
+import AccessCodePage from './components/accesscodepage/acesscodepage.js';
 import CoordinatorPage from './components/coordinatorpage/coordinatorpage.js'
 import EventRegistrationForm from './components/eventRegistration/eventRegistration.js'
 import EventConfirmation from './components/eventconfirmation/eventconfirmation.js'
@@ -42,8 +43,8 @@ function App() {
             {/* <HomePage /> */}
             <EventConfirmation />
           </Route>
-          <Route path="/volunteerAccessCode">
-            <VolunteerPage />
+          <Route path="/accesscode">
+            <AccessCodePage /> 
           </Route>
           <Route path="/event">
             <EventRegistrationForm />
