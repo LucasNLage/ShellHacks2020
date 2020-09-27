@@ -1,12 +1,18 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import AreaCard from '../areacard/areacard.js';
 import Grid from '@material-ui/core/Grid';
 import Appbar from "../appbar/appbar.js";
+import { connect } from "react-redux";
+import { setAreas } from '../../redux/actions.js';
 
-export default function AreaPage() {
+function AreaPage(props) {
+  const [areas, setAreas] = useState([]);
 
-  let areas = [{id: 0, name: "Area 1"},{id: 1, name: "Area 2"},{id: 2, name: "Area 3"}]
-
+  useEffect(() => {
+    if (props.areas) {
+      setAreas(props.areas);
+    }
+  }, props.areas)
 
   return (
     <div>
@@ -18,12 +24,25 @@ export default function AreaPage() {
           alignItems="center"
       >
         {areas.map((area) =>
-          <Grid item spacing={3}>
+          <Grid item key={"area"+area.id}>
             <AreaCard name={area.name}/>
           </Grid>
         )}
       </Grid >
     </div>
   )
-
 }
+
+const mapStateToProps = (state) => {
+  return {
+    areas: state.areas
+  }
+}
+
+const mapDispatchToProps = { areaAction: setAreas }
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(AreaPage)
+
