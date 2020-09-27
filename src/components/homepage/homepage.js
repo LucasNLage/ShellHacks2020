@@ -3,10 +3,15 @@ import React from 'react';
 import './homepage.css';
 import { makeStyles } from '@material-ui/core/styles';
 import { CardMedia } from '@material-ui/core';
+
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import AdminLink from '../links/adminLink.js';
+
+import AppBar from '../appbar/appbar.js';
+import EventRegistrationForm from '../eventRegistration/eventRegistration.js';
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -48,9 +53,9 @@ const useStyles = makeStyles((theme) => ({
 
 export default function HomePage() {
     const classes = useStyles();
+    let history = useHistory();
 
-    return (
-        
+    return ( 
         <Grid
         container
         direction="column"

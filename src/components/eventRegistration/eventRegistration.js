@@ -14,7 +14,7 @@ import AppBar from '../appbar/appbar.js';
 const utilStyles = makeStyles((theme) => ({
   fields: {
     '& > *': {
-      
+
       background: "#F1F1F1",
       marginTop: '20px',
       marginBottom: '20px',
@@ -23,7 +23,7 @@ const utilStyles = makeStyles((theme) => ({
     },
   },
   date: {
-      marginTop: '20px',
+    marginTop: '20px',
   },
   margin: {
     marginTop: '10px',
@@ -45,15 +45,13 @@ const utilStyles = makeStyles((theme) => ({
     backgroundColor: "#27AE60",
     color: '#FFFFFF'
   },
+
 }));
-
-
-
 
 
 export default function EventRegistrationForm() {
   const utilStyle = utilStyles();
-  const [emaiInput, setEmailInput] = useState(''); // '' is the initial state value
+  const [emailInput, setEmailInput] = useState(''); // '' is the initial state value
   const [eventInput, setEventInput] = useState(''); // '' is the initial state value
   const [locationInput, setLocationInput] = useState(''); // '' is the initial state value
   const [dateInput, setDateInput] = useState(new Date()); // '' is the initial state value
@@ -62,11 +60,11 @@ export default function EventRegistrationForm() {
 
   function handleSubmit() {
     axios.post('/event', {
-      name: "test from in app",
-      location: "Lucas Basement",
-      email: "admin@admin.com",
-      start_time: "2020-09-26T21:29:16.681Z",
-      end_time: "2020-09-26T21::16.681Z"
+      name: eventInput,
+      location: locationInput,
+      email: emailInput,
+      start_time: dateInput,
+      end_time: endDateInput
     })
       .then(function (response) {
         console.log(response);
@@ -78,6 +76,7 @@ export default function EventRegistrationForm() {
     console.log("start date:", endDateInput)
     console.log("sent form")
   }
+
 
 
   return(
@@ -100,55 +99,56 @@ export default function EventRegistrationForm() {
             id="event-name"
             label="Event Name"
           />
+
         {console.log("Event:", eventInput)}
-    </Grid>
-    <Grid item>
-       <TextField
-            className={utilStyle.margin}
+      </Grid>
+      <Grid item>
+        <TextField
+          className={utilStyle.margin}
 
-            id="email-input"
-            label="Email"
-            value={emaiInput}
-            onInput={e => setEmailInput(e.target.value)}
-          />
-          {console.log("Email:", emaiInput)}
-    </Grid>
-    <Grid item>
-    <TextField 
-            className={utilStyle.margin}
+          id="email-input"
+          label="Email"
+          value={emailInput}
+          onInput={e => setEmailInput(e.target.value)}
+        />
+        {console.log("Email:", emailInput)}
+      </Grid>
+      <Grid item>
+        <TextField
+          className={utilStyle.margin}
 
-            id="location"
-            label="Location"
-            value={locationInput}
-            onInput={e => setLocationInput(e.target.value)}
-          />
-          {console.log("Location:", locationInput)}
-      </Grid>  
+          id="location"
+          label="Location"
+          value={locationInput}
+          onInput={e => setLocationInput(e.target.value)}
+        />
+        {console.log("Location:", locationInput)}
+      </Grid>
       <Grid item className={utilStyle.date}>
-            <DateAndTimePickers
-              id="start-of-event"
-              title="Start"
-              handleInputChange={setDateInput}
-              value={dateInput}
-            />
-            {console.log("Date:", dateInput)}
-        </Grid>      
-        <Grid item className={utilStyle.date}>
         <DateAndTimePickers
-            id="end-of-event"
-              title="End"
-              handleInputChange={setEndDateInput}
-              value={endDateInput}
-            />
-            {console.log("Date:", endDateInput)}
-        </Grid>
-        <Grid item>
-       <Button 
+          id="start-of-event"
+          title="Start"
+          handleInputChange={setDateInput}
+          value={dateInput}
+        />
+        {console.log("Date:", dateInput)}
+      </Grid>
+      <Grid item className={utilStyle.date}>
+        <DateAndTimePickers
+          id="end-of-event"
+          title="End"
+          handleInputChange={setEndDateInput}
+          value={endDateInput}
+        />
+        {console.log("Date:", endDateInput)}
+      </Grid>
+      <Grid item>
+        <Button
           className={utilStyle.button}
           onClick={() => { handleSubmit() }}>Submit</Button>
 
-        </Grid>
-</Grid>
+      </Grid>
+    </Grid>
 
   );
 
