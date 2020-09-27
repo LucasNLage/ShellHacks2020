@@ -40,14 +40,14 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/">
-            {/* <HomePage /> */}
-            <EventConfirmation />
+            <HomePage />
+            {/* <EventConfirmation /> */}
           </Route>
           <Route path="/accesscode">
-            <AccessCodePage /> 
+            <AccessCodePage />
           </Route>
           <Route path="/areas">
-            <AreaPage/>
+            <AreaPage />
           </Route>
           <Route path="/event">
             <EventRegistrationForm />
