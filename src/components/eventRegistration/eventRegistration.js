@@ -6,6 +6,8 @@ import DateAndTimePickers from '../datePicker/datePicker.js'
 import InputAdornment from '@material-ui/core/InputAdornment'
 import Button from '@material-ui/core/Button';
 import './eventRegistration.css';
+import { useState } from 'react';
+
 
 const textStyles = makeStyles((theme) => ({
     fields: {
@@ -51,14 +53,25 @@ const useStyles = makeStyles((theme) => ({
 export default function EventRegistrationForm(){
     const classes = useStyles();
     const textStyle = textStyles();
+    const [emaiInput, setEmailInput] = useState(''); // '' is the initial state value
+    const [eventInput, setEventInput] = useState(''); // '' is the initial state value
+    const [locationInput, setLocationInput] = useState(''); // '' is the initial state value
+    const [dateInput, setDateInput] = useState(''); // '' is the initial state value
+    const [endDateInput, setEndDateInput] = useState(''); // '' is the initial state value
 
+    
     return (
     <div>
         <div className={classes.margin}  style ={{textAlign: "center"}}>
-        <p className={classes.title}>New Event</p>
+            <p className={classes.title}>New Event</p>
 
                 <div className={textStyle.fields} style ={{bottom: "40px"}}>
-                    <TextField id="event-name" label="Event Name" />
+                    <TextField value={eventInput}
+                                onInput={e => setEventInput(e.target.value)}
+                                id="event-name"
+                                label="Event Name" 
+                    />
+                    {console.log("Event:", eventInput)}
                     <TextField
                         id="email-input"
                         label="Email"
@@ -68,14 +81,37 @@ export default function EventRegistrationForm(){
                         <AccountCircle color="inherit"/>
                         </InputAdornment>),
                         }}
+                        value={emaiInput}
+                        onInput={e => setEmailInput(e.target.value)}
                     />
-                    <TextField id="location" label="Location" />
+                    {console.log("Email:", emaiInput)}
+
+                    <TextField id="location"
+                               label="Location"
+                               value={locationInput}
+                               onInput={e => setLocationInput(e.target.value)}
+                    />
+                    {console.log("Location:", locationInput)}
 
                 </div>
 
                 <div className={textStyle.date}>
-                    <DateAndTimePickers  id="start-of-event" title="Start of Event" />
-                    <DateAndTimePickers id="end-of-event" title="End of Event"/>
+                    <DateAndTimePickers
+                        id="start-of-event"
+                        title="Start"
+                        value={dateInput}
+                        onInput={e => setDateInput(e.target.value)}
+                    />
+                    {console.log("Date:", dateInput)}
+  
+                    <DateAndTimePickers
+                        id="end-of-event"
+                        title="End"
+                        value={endDateInput}
+                        onInput={e => setEndDateInput(e.target.value)}
+                    />
+                    {console.log("Date:", endDateInput)}
+                    
                 </div>
 
                 <div className={classes.button}>

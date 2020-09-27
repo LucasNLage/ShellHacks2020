@@ -1,9 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import HomePage from './components/homepage/homepage.js'
-import AdminLink from './components/links/adminLink.js'
-import { makeStyles } from '@material-ui/core/styles';
 
 import {
   BrowserRouter as Router,
