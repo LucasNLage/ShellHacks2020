@@ -83,7 +83,7 @@ export default function EventConfirmation(props) {
 
     return (
         <>
-            <Appbar />
+            <Appbar title="Event Confirmation"/>
             <Grid
                 container
                 direction="column"

@@ -20,11 +20,13 @@ const useStyles = makeStyles((theme) => ({
         // marginRight: theme.spacing(2),
     },
     title: {
+        color: "#FFFFFF",
         flexGrow: 1,
-        display: 'none',
+        // display: 'none',
         [theme.breakpoints.up('sm')]: {
             display: 'block',
         },
+        textAlign: "center",
     },
     backIcon: {
         color: '#FFFFFF',
@@ -62,11 +64,13 @@ export default function Appbar(props) {
                         <IconButton edge="start" className={classes.menuButton} aria-label="menu">
                             <ArrowBackIosIcon className={classes.backIcon}/>
                         </IconButton >
-
+                        {/* <Typography className={classes.title} variant="h6" noWrap>
+                            Event Name
+                        </Typography> */}
                         <Typography variant="h6" color="inherit">
-                            {props.eventName ? props.eventName : null}
+                            {props.eventName ? props.eventName : null} 
 
-                    </Typography>
+                     </Typography>
                     </Toolbar>
                 </AppBar>
                 :
@@ -81,13 +85,9 @@ export default function Appbar(props) {
                             <ArrowBackIosIcon />
                         </IconButton>
                         <Typography className={classes.title} variant="h6" noWrap>
-                            Event Name
+                            {props.title}
                         </Typography>
-                        <div className={classes.search}>
-                            <div className={classes.searchIcon}>
-                                {/* <AddIcon /> */}
-                            </div>
-                        </div>
+            
                     </Toolbar>
                 </AppBar>
             }

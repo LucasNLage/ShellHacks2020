@@ -37,8 +37,9 @@ const utilStyles = makeStyles((theme) => ({
   },
   title: {
     margin: '20px',
-    fontSize: '30px',
-    textAlign: "center",
+    // margin: '20px',
+    // fontSize: '30px',
+    // textAlign: "center",
   },
   button: {
     marginTop: '40px',
@@ -47,6 +48,19 @@ const utilStyles = makeStyles((theme) => ({
     backgroundColor: "#27AE60",
     color: '#FFFFFF'
   },
+  image: {
+    marginTop: '20px',
+    height: '300px',
+    width: '382px',
+    alignSelf: 'center',
+
+  },
+  imageBox:{
+    width: '10px',
+    height: '10px',
+    right: '100px',
+
+  }
 
 }));
 
@@ -88,12 +102,13 @@ export default function EventRegistrationForm() {
     justify="center"
     alignItems="center"
   >
-    <AppBar/>
-    <Grid item>
+    <AppBar title="Registration Form" />
+
+    {/* <Grid item>
       <p className={utilStyle.title}
 >Registration Form</p>
-    </Grid>
-    <Grid item>
+    </Grid> */}
+    <Grid item className={utilStyle.title}>
        <TextField 
             className={utilStyle.margin}
             value={eventInput}
@@ -148,6 +163,9 @@ export default function EventRegistrationForm() {
         <Button
           className={utilStyle.button}
           onClick={() => { handleSubmit() }}>Submit</Button>
+      </Grid>
+      <Grid item>
+        <img className={utilStyle.image} src="/images/recycle.jpg"></img>
       </Grid>
     </Grid>
 

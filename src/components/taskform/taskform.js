@@ -77,17 +77,17 @@ export default function EventRegistrationForm() {
     }
     return (
         <>
-            <Appbar />
+            <Appbar title="New Task Form"/>
             <Grid
                 container
                 direction="column"
                 justify="center"
                 alignItems="center"
             >
-                <Grid item>
+                {/* <Grid item>
                     <p className={utilStyle.title}
                     >New Task</p>
-                </Grid>
+                </Grid> */}
                 <Grid item>
                     <TextField
                         className={utilStyle.margin}
@@ -129,6 +129,7 @@ export default function EventRegistrationForm() {
                         className={utilStyle.button}
                         onClick={() => { handleSubmit() }}>Submit</Button>
                 </Grid>
+                
             </Grid>
         </>
     );
