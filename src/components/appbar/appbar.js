@@ -90,6 +90,7 @@ export default function Appbar(props) {
                         <Typography className={classes.title} variant="h6" noWrap>
                             {props.title}
                         </Typography>
+                        <AddIcon/>
 
                     </Toolbar>
                 </AppBar>
