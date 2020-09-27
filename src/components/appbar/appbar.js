@@ -7,33 +7,33 @@ import InputBase from '@material-ui/core/InputBase';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import AddIcon from '@material-ui/icons/Add';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import SearchIcon from '@material-ui/icons/Search';
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        flexGrow: 1,
+        backgroundColor: '#005424',
+        // color: '#19ae59',
+
     },
     menuButton: {
-        marginRight: theme.spacing(2),
+        // marginRight: theme.spacing(2),
     },
     title: {
+        color: "#FFFFFF",
         flexGrow: 1,
-        display: 'none',
+        // display: 'none',
         [theme.breakpoints.up('sm')]: {
             display: 'block',
         },
+        textAlign: "center",
     },
-    searchIcon: {
-        padding: theme.spacing(0, 2),
-        height: '100%',
-        position: 'absolute',
-        pointerEvents: 'none',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
+    backIcon: {
+        color: '#FFFFFF',
     },
     inputRoot: {
-        color: 'rgba(226,248,235,1)'
+        // color: 'rgba(226,248,235,1)'
     },
     inputInput: {
         padding: theme.spacing(1, 1, 1, 0),
@@ -54,41 +54,44 @@ const useStyles = makeStyles((theme) => ({
 export default function Appbar(props) {
     const classes = useStyles();
 
+    let history = useHistory();
 
     let appbarType = props;
     return (
         <>
             {(props.type === "coordinator")
                 ?
-                <AppBar position="static">
-                    <Toolbar variant="dense">
-                        <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                            <MenuIcon />
-                        </IconButton>
+                <AppBar position="static" >
+                    <Toolbar variant="dense" className={classes.root}>
+                        <IconButton edge="start" className={classes.menuButton} aria-label="menu">
+                            <ArrowBackIosIcon className={classes.backIcon} />
+                        </IconButton >
+                        <Typography className={classes.title} variant="h6" noWrap>
+                            Coordinator
+                        </Typography>
                         <Typography variant="h6" color="inherit">
-                            {props.eventName ? props.eventName : null}
-                    </Typography>
+                            {props.eventName ? props.eventName : null} 
+                     </Typography>
+                     <AddIcon/>
+
                     </Toolbar>
                 </AppBar>
                 :
                 <AppBar position="static">
-                    <Toolbar>
+                    <Toolbar className={classes.root}>
                         <IconButton
                             edge="start"
                             className={classes.menuButton}
                             color="inherit"
                             aria-label="open drawer"
                         >
-                            <MenuIcon />
+                            <ArrowBackIosIcon onClick={() => history.goBack()} />
                         </IconButton>
                         <Typography className={classes.title} variant="h6" noWrap>
-                            Event Name
+                            {props.title}
                         </Typography>
-                        <div className={classes.search}>
-                            <div className={classes.searchIcon}>
-                                <AddIcon />
-                            </div>
-                        </div>
+                        <AddIcon/>
+
                     </Toolbar>
                 </AppBar>
             }

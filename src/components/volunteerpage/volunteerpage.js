@@ -29,8 +29,6 @@ function VolunteerPage(props) {
   }, [tasks, selected])
 
 
-
-
   const handleSelect = (id) => {
     let newSelected = { ...selected };
     if (idTrack.current === null) {

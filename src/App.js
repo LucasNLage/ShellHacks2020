@@ -10,6 +10,7 @@ import EventConfirmation from './components/eventconfirmation/eventconfirmation.
 import AdminLink from './components/links/adminLink.js'
 import { makeStyles } from '@material-ui/core/styles';
 import AreaPage from "./components/areapage/areapage.js"
+import TaskRegistration from "./components/taskform/taskform.js"
 
 
 
@@ -40,12 +41,11 @@ function App() {
           <Route path="/event">
             <EventRegistrationForm />
           </Route>
-          <Route path="/eventRegistration">
-            <EventRegistrationForm />
+          <Route path="/eventConfirmation">
+            <EventConfirmation />
           </Route>
           <Route path="/taskRegistration">
-            {/* <TaskForm /> */}
-            <h1>Taskform</h1>
+            <TaskRegistration />
           </Route>
           <Route path="/volunteer">
             <VolunteerPage />

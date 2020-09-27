@@ -6,10 +6,12 @@ import DateAndTimePickers from '../datePicker/datePicker.js'
 import InputAdornment from '@material-ui/core/InputAdornment'
 import Button from '@material-ui/core/Button';
 import axios from "axios"
-import './eventRegistration.css';
 import { useState } from 'react';
 import Grid from '@material-ui/core/Grid';
 
+import { useHistory } from "react-router-dom";
+
+import AppBar from '../appbar/appbar.js';
 
 const utilStyles = makeStyles((theme) => ({
   fields: {
@@ -20,8 +22,6 @@ const utilStyles = makeStyles((theme) => ({
       marginBottom: '20px',
       // backgroundColor: "#F1F1F1",
       opacity: "0.90",
-
-      // color: "#263238",
     },
   },
   date: {
@@ -30,21 +30,37 @@ const utilStyles = makeStyles((theme) => ({
   margin: {
     marginTop: '10px',
     marginBottom: '10px',
-    width: '18ch',
+    width: '20ch',
     background: "#F1F1F1",
     opacity: "0.90",
 
   },
   title: {
-    margin: '80px',
-    fontSize: '30px',
-    textAlign: "center",
+    margin: '20px',
+    // margin: '20px',
+    // fontSize: '30px',
+    // textAlign: "center",
   },
   button: {
     marginTop: '40px',
+    width: '110px',
+    height: '40px',
     backgroundColor: "#27AE60",
+    color: '#FFFFFF'
+  },
+  image: {
+    marginTop: '20px',
+    height: '300px',
+    width: '382px',
+    alignSelf: 'center',
 
   },
+  imageBox:{
+    width: '10px',
+    height: '10px',
+    right: '100px',
+
+  }
 
 }));
 
@@ -56,7 +72,8 @@ export default function EventRegistrationForm() {
   const [locationInput, setLocationInput] = useState(''); // '' is the initial state value
   const [dateInput, setDateInput] = useState(new Date()); // '' is the initial state value
   const [endDateInput, setEndDateInput] = useState(new Date()); // '' is the initial state value
-
+  let res;
+  let history = useHistory();
 
   function handleSubmit() {
     axios.post('/event', {
@@ -68,35 +85,38 @@ export default function EventRegistrationForm() {
     })
       .then(function (response) {
         console.log(response);
+        history.push("/eventconfirmation", { res: response.data });
       })
       .catch(function (error) {
         console.log(error);
       });
-
-    console.log("start date:", endDateInput)
-    console.log("sent form")
   }
 
 
-  return (
-    <Grid
-      container
-      direction="column"
-      justify="center"
-      alignItems="center"
-    >
-      <Grid item>
-        <p className={utilStyle.title}
-        >New Event</p>
-      </Grid>
-      <Grid item>
-        <TextField
-          className={utilStyle.margin}
-          value={eventInput}
-          onInput={e => setEventInput(e.target.value)}
-          id="event-name"
-          label="Event Name"
-        />
+
+
+  return(
+  <Grid
+    container
+    direction="column"
+    justify="center"
+    alignItems="center"
+  >
+    <AppBar title="Registration Form" />
+
+    {/* <Grid item>
+      <p className={utilStyle.title}
+>Registration Form</p>
+    </Grid> */}
+    <Grid item className={utilStyle.title}>
+       <TextField 
+            className={utilStyle.margin}
+            value={eventInput}
+            onInput={e => setEventInput(e.target.value)}
+            id="event-name"
+            label="Event Name"
+          />
+
         {console.log("Event:", eventInput)}
       </Grid>
       <Grid item>
@@ -143,7 +163,9 @@ export default function EventRegistrationForm() {
         <Button
           className={utilStyle.button}
           onClick={() => { handleSubmit() }}>Submit</Button>
-
+      </Grid>
+      <Grid item>
+        <img className={utilStyle.image} src="/images/recycle.jpg"></img>
       </Grid>
     </Grid>
 
@@ -151,60 +173,3 @@ export default function EventRegistrationForm() {
 
 }
 
-//   return (
-//     <div>
-//       <div className={classes.margin} style={{ textAlign: "center" }}>
-//         <p className={classes.title}>New Event</p>
-
-//         <div className={textStyle.fields} style={{ bottom: "40px" }}>
-//           <TextField value={eventInput}
-//             onInput={e => setEventInput(e.target.value)}
-//             id="event-name"
-//             label="Event Name"
-//           />
-//           {console.log("Event:", eventInput)}
-//           <TextField
-//             id="email-input"
-//             label="Email"
-//             InputProps={{
-//               startAdornment: (
-//                 <InputAdornment position="start">
-//                   <AccountCircle color="inherit" />
-//                 </InputAdornment>),
-//             }}
-//             value={emaiInput}
-//             onInput={e => setEmailInput(e.target.value)}
-//           />
-//           {console.log("Email:", emaiInput)}
-
-//           <TextField id="location"
-//             label="Location"
-//             value={locationInput}
-//             onInput={e => setLocationInput(e.target.value)}
-//           />
-//           </div>
-//           {console.log("Location:", locationInput)}
-//           <div className={textStyle.date}>
-//             <DateAndTimePickers
-//               id="start-of-event"
-//               title="Start"
-//               handleInputChange={setDateInput}
-//               value={dateInput}
-//             />
-//             {console.log("Date:", dateInput)}
-
-//             <DateAndTimePickers
-//               id="end-of-event"
-//               title="End"
-//               handleInputChange={setEndDateInput}
-//               value={endDateInput}
-//             />
-//             {console.log("Date:", endDateInput)}
-//           </div>
-//           <div className={classes.button}>
-//             <Button onClick={() => { handleSubmit() }}>Submit</Button>
-//           </div>
-//       </div>
-//     </div>
-//   );
-// }
