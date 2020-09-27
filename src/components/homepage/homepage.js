@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '20px',
     },
     welcome: {
-        margin: '70px',
+        margin: '30px',
         marginBottom: '10px',
         fontSize: '48px',
 
@@ -47,7 +47,12 @@ const useStyles = makeStyles((theme) => ({
         radius: '10px',
         color: '#FFFFFF'
 
+    },
+    image: {
+        marginTop: '10px',
+        height: '200px',
     }
+
 }));
 
 
@@ -64,13 +69,7 @@ export default function HomePage() {
       >
           {/* <AppBar></AppBar> */}
     <Grid item>
-        <img src="/Desktop/fendShellHack/ShellHacks2020/public/images/greenimg.jpg"></img>
-        {/* <CardMedia 
-        
-            style={{ height: 20, paddingTop: '56.25%' }}
-            image="/Users/amandanisenbaum/Desktop/fendShellHack/ShellHacks2020/public/images/greenimg.jpg"
-            title="lorem ipsum"
-        /> */}
+        <img className={classes.image} src="/images/hpimage.svg"></img>
     </Grid>
     <Grid item >
         <Typography className={classes.welcome} variant="h3" component="h1" align="center">Welcome to TaskMe</Typography>
