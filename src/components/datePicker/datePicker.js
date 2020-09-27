@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function OutlinedButtons(props) {
+export default function DateAndTimePickers(props) {
   const classes = useStyles();
   const dateStr = props.title;
 
