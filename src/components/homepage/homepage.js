@@ -1,13 +1,6 @@
 
 import React from 'react';
 import './homepage.css';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
-    useHistory
-} from "react-router-dom";
 import Button from '@material-ui/core/Button';
 import AdminLink from '../links/adminLink.js';
 import RegistrationForm from '../eventRegistration/eventRegistration.js'
@@ -29,61 +22,58 @@ const useStyles = makeStyles((theme) => ({
             height: "75px",
             width: "250px",
             fontSize: 20,
-            
+
         },
     },
 }));
 
-
-
 const outerTheme = createMuiTheme({
     palette: {
-      secondary: {
-        main: green[500],
-      },
+        secondary: {
+            main: green[500],
+        },
     },
-  });
-  
+});
+
 const theme = createMuiTheme({
     palette: {
-      primary: {
-        main: "#000000",
-        contrastText: "#fff" //button text white instead of black
-      },
-      background: {
-        default: "#394764"
-      }
+        primary: {
+            main: "#000000",
+            contrastText: "#fff" //button text white instead of black
+        },
+        background: {
+            default: "#394764"
+        }
     }
-  });
+});
 
 //TESTING HOME PAGE
 export default function HomePage() {
     const classes = useStyles();
 
     return (
-        <EventRegistrationForm></EventRegistrationForm>
-        // <div className="HomePage-header">
-        //     <CardMedia
-        //         style={{height: 0, paddingTop: '56.25%'}}
-        //         image="."
-        //         title="lorem ipsum"
-        //     />
-        //     {/* <header className="HomePage-header"> */}
-        //         <h1 className="HomePage-welcome">Welcome to TaskMe</h1>
-        //         <h4 className="HomePage-started">Let's get started.</h4>
-        //     {/* </header> */}
-        //         <div className="HomePage-button1">
-        //         <Button  >Volunteer</Button>
-        //         </div>
-        //         {/* <div className="HomePage-text"> */}
-        //          <p className="HomePage-text">or</p>
-        //          {/* </div> */}
-        //          <div className="HomePage-button2">
-        //         <Button>Coordinator</Button>
-        //         </div>
-        //         {/* // <ThemeProvider></ThemeProvider>
-        //          {/* <AdminLink />} */}
-        // </div>
+        <div className="HomePage-header">
+            <CardMedia
+                style={{ height: 0, paddingTop: '56.25%' }}
+                image="."
+                title="lorem ipsum"
+            />
+            {/* <header className="HomePage-header"> */}
+            <h1 className="HomePage-welcome">Welcome to TaskMe</h1>
+            <h4 className="HomePage-started">Let's get started.</h4>
+            {/* </header> */}
+            <div className="HomePage-button1">
+                <Button  >Volunteer</Button>
+            </div>
+            {/* <div className="HomePage-text"> */}
+            <p className="HomePage-text">or</p>
+            {/* </div> */}
+            <div className="HomePage-button2">
+                <Button>Coordinator</Button>
+            </div>
+            <ThemeProvider></ThemeProvider>
+            <AdminLink />
+        </div>
 
     );
 }

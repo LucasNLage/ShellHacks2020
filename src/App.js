@@ -1,13 +1,22 @@
 import React from 'react';
 import './App.css';
 
+import HomePage from './components/homepage/homepage.js'
+import VolunteerPage from './components/volunteerpage/volunteerpage.js'
+import CoordinatorPage from './components/coordinatorpage/coordinatorpage.js'
+import EventRegistrationForm from './components/eventRegistration/eventRegistration.js'
+import AdminLink from './components/links/adminLink.js'
+import { makeStyles } from '@material-ui/core/styles';
+
+
+
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
-import VolunteerPage from './components/volunteerpage/volunteerpage';
+
 // 165.22.38.77:3001
 
 function App() {
@@ -28,7 +37,29 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/">
+            <HomePage />
+          </Route>
+          <Route path="/volunteerAccessCode">
             <VolunteerPage />
+          </Route>
+          <Route path="/event">
+            <EventRegistrationForm />
+          </Route>
+          <Route path="/eventRegistration">
+            <EventRegistrationForm />
+          </Route>
+          <Route path="/taskRegistration">
+            {/* <TaskForm /> */}
+            <h1>Taskform</h1>
+          </Route>
+          <Route path="/volunteerPage">
+            <VolunteerPage />
+          </Route>
+          <Route path="/coordinatorPage">
+            <CoordinatorPage />
+          </Route>
+          <Route path="/coordinatorPage">
+            <CoordinatorPage />
           </Route>
         </Switch>
       </Router >

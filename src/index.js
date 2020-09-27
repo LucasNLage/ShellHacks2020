@@ -4,8 +4,9 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import HomePage from './components/homepage/homepage.js';
-import axios from 'axios';
-axios.defaults.baseURL = 'http://165.22.38.77:3001/';
+import axios from "axios"
+axios.defaults.baseURL = 'http://165.22.38.77:3001';
+
 
 ReactDOM.render(
   <React.StrictMode>
