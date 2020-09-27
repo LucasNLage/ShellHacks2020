@@ -31,10 +31,10 @@ const utilStyles = makeStyles((theme) => ({
     margin: {
         marginTop: '10px',
         marginBottom: '10px',
-        width: '18ch',
+        width: '20ch',
         background: "#F1F1F1",
         opacity: "0.90",
-
+    
     },
     title: {
         marginTop: '40px',
