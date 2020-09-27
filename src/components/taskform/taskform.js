@@ -81,7 +81,7 @@ export default function EventRegistrationForm() {
     }
     return (
         <>
-            <Appbar title="New Task Form"/>
+            <Appbar title="New Task Form" />
             <Grid
                 container
                 direction="column"
@@ -114,7 +114,8 @@ export default function EventRegistrationForm() {
                     <TextField
                         className={utilStyle.margin}
                         id="maxVol"
-                        label="How many volunteers?"
+                        label="How many volunteers are needed?"
+
                         value={maxVol}
                         onInput={e => setMaxVol(e.target.value)}
                     />

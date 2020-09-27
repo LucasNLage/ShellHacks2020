@@ -37,7 +37,7 @@ function AccessCodePage(props) {
     console.log("Access Code:", accessCode);
     console.log("Full Name:", fullName);
 
-    axios.get('/event/'+location.state.role+"/"+accessCode)
+    axios.get('/event/' + location.state.role + "/" + accessCode)
       .then((response) => {
         console.log("Reponse:", response);
         props.areaAction(response.data.areas);
@@ -47,7 +47,7 @@ function AccessCodePage(props) {
         console.log("Get Event Error:", error);
       })
   }
-
+  
     return (
       <>
         <Appbar title={location.state.role} />
@@ -94,6 +94,7 @@ function AccessCodePage(props) {
           </form>
       </>
     )
+
 }
 const mapDispatchToProps = { areaAction: setAreas }
 
