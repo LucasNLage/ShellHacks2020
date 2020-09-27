@@ -64,11 +64,13 @@ export default function HomePage() {
       >
           {/* <AppBar></AppBar> */}
     <Grid item>
-        <CardMedia 
-            style={{ height: 0, paddingTop: '56.25%' }}
-            image="."
+        <img src="/Desktop/fendShellHack/ShellHacks2020/public/images/greenimg.jpg"></img>
+        {/* <CardMedia 
+        
+            style={{ height: 20, paddingTop: '56.25%' }}
+            image="/Users/amandanisenbaum/Desktop/fendShellHack/ShellHacks2020/public/images/greenimg.jpg"
             title="lorem ipsum"
-        />
+        /> */}
     </Grid>
     <Grid item >
         <Typography className={classes.welcome} variant="h3" component="h1" align="center">Welcome to TaskMe</Typography>
