@@ -15,38 +15,25 @@ import {
 
 
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    ...theme.typography.button,
-    backgroundColor: theme.palette.background.paper,
-  },
-}));
+
 
 function App() {
-  const classes = useStyles();
   return (
-    <div className={classes.root}>
-      <header className="App-header">
-        <h1>Welcome to TaskMe</h1>        
-        <Button title='Volunteer'/>
-        <p>or</p>
-        <Button title='Coordinator'/>
-        <AdminLink/>
-      </header>
-     
-    </div>
+    <div>
     <Router>
       <Switch>
         <Route exact path="/">
-          <h1>Hi</h1>
+          
           <HomePage />
         </Route>
         <Route exact path="/test">
-          <h1>Hello</h1>
+          
           <HomePage />
         </Route>
       </Switch>
     </Router>
+  </div>
+
   );
 }
 

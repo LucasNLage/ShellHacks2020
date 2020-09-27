@@ -11,44 +11,36 @@ const useStyles = makeStyles((theme) => ({
       
       margin: theme.spacing(1),
       height: "75px",
-      width: "400px",
+      width: "250px",
       fontSize: 20,
     },
   },
 }));
 
-function renderComponent(props) {
-  const name = props.title;
-  if (name === 'Volunteer') {
-    return (
-      <Button variant="contained" color="primary">
-        {name}
-      </Button>
-    );
-  } else {
-    return (
-      <Button variant="contained" color="secondary">
-        {name}
-      </Button>
-    );
-  }
-}
+// function renderComponent(props) {
+//     if (name === 'Volunteer') {
+//       return (
+        
+//       );
+//     } else {
+//       return(
+//         <Button variant="contained" color="secondary">
+//              {name}
+//          </Button>
+//       );
+//     }
+//   }
 
 export default function OutlinedButtons(props) {
   const classes = useStyles();
+  const name = props.title;
 
   return (
     <div className={classes.root}>
-      {renderComponent(props)}
+      <Button variant="contained" color="primary">
+            {name}
+      </Button>
     </div>
   );
-  //   return (
 
-  //       <Button variant="outlined" color="primary">
-  //         {props.title}
-  //       </Button>
-  //       <Button variant="outlined" color="secondary">
-  //         Secondary
-  //       </Button>
-  //   );
 }
