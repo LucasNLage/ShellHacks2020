@@ -9,6 +9,7 @@ import axios from "axios"
 import { useState } from 'react';
 import Grid from '@material-ui/core/Grid';
 import { useHistory } from "react-router-dom";
+import Appbar from "../appbar/appbar.js"
 
 
 const utilStyles = makeStyles((theme) => ({
@@ -75,59 +76,61 @@ export default function EventRegistrationForm() {
             });
     }
     return (
-        <Grid
-            container
-            direction="column"
-            justify="center"
-            alignItems="center"
-        >
-            <Grid item>
-                <p className={utilStyle.title}
-                >New Task</p>
+        <>
+            <Appbar />
+            <Grid
+                container
+                direction="column"
+                justify="center"
+                alignItems="center"
+            >
+                <Grid item>
+                    <p className={utilStyle.title}
+                    >New Task</p>
+                </Grid>
+                <Grid item>
+                    <TextField
+                        className={utilStyle.margin}
+                        value={taskInput}
+                        onInput={e => setTaskInput(e.target.value)}
+                        id="Task-name"
+                        label="Task Name"
+                    />
+                </Grid>
+                <Grid item>
+                    <TextField
+                        className={utilStyle.margin}
+                        id="description"
+                        label="Description"
+                        value={description}
+                        onInput={e => setDescription(e.target.value)}
+                    />
+                </Grid>
+                <Grid item>
+                    <TextField
+                        className={utilStyle.margin}
+                        id="maxVol"
+                        label="maxVol"
+                        value={maxVol}
+                        onInput={e => setMaxVol(e.target.value)}
+                    />
+                </Grid>
+                <Grid item>
+                    <TextField
+                        className={utilStyle.margin}
+                        id="location"
+                        label="Location"
+                        value={locationInput}
+                        onInput={e => setLocationInput(e.target.value)}
+                    />
+                </Grid>
+                <Grid item>
+                    <Button
+                        className={utilStyle.button}
+                        onClick={() => { handleSubmit() }}>Submit</Button>
+                </Grid>
             </Grid>
-            <Grid item>
-                <TextField
-                    className={utilStyle.margin}
-                    value={taskInput}
-                    onInput={e => setTaskInput(e.target.value)}
-                    id="Task-name"
-                    label="Task Name"
-                />
-            </Grid>
-            <Grid item>
-                <TextField
-                    className={utilStyle.margin}
-                    id="description"
-                    label="Description"
-                    value={description}
-                    onInput={e => setDescription(e.target.value)}
-                />
-            </Grid>
-            <Grid item>
-                <TextField
-                    className={utilStyle.margin}
-                    id="maxVol"
-                    label="maxVol"
-                    value={maxVol}
-                    onInput={e => setMaxVol(e.target.value)}
-                />
-            </Grid>
-            <Grid item>
-                <TextField
-                    className={utilStyle.margin}
-                    id="location"
-                    label="Location"
-                    value={locationInput}
-                    onInput={e => setLocationInput(e.target.value)}
-                />
-            </Grid>
-            <Grid item>
-                <Button
-                    className={utilStyle.button}
-                    onClick={() => { handleSubmit() }}>Submit</Button>
-            </Grid>
-        </Grid>
-
+        </>
     );
 
 }
