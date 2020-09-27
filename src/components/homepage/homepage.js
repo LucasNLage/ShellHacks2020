@@ -77,13 +77,19 @@ export default function HomePage() {
         <Typography className={classes.starter} variant="h4" component="h4" align="center">Let's get started.</Typography>
     </Grid>
     <Grid item>
-        <Button className={classes.button} >Volunteer</Button>
+        <Button className={classes.button}
+                onClick={()=> history.push("/accesscode", {role: "Volunteer"})}>
+                Volunteer
+        </Button>
     </Grid>
     <Grid item >
         <Typography className={classes.string} variant="p" component="p" align="center">or</Typography>
     </Grid>
     <Grid item>
-        <Button className={classes.button}>Coordinator</Button>
+        <Button 
+            className={classes.button}
+            onClick={()=> history.push("/accesscode", {role: "Coordinator"})}>Coordinator
+        </Button>
     </Grid>
     <Grid item className={classes.padding}>
         <AdminLink  /> 
