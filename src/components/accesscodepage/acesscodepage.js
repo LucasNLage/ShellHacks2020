@@ -30,7 +30,7 @@ function AccessCodePage(props) {
     console.log("Access Code:", accessCode);
     console.log("Full Name:", fullName);
 
-    axios.get('/event/'+location.state.role+"/"+accessCode)
+    axios.get('/event/' + location.state.role + "/" + accessCode)
       .then((response) => {
         console.log("Reponse:", response);
         props.areaAction(response.data.areas);
@@ -41,51 +41,51 @@ function AccessCodePage(props) {
       })
   }
 
-    return (
-      <>
-        <Appbar type="coordinator" />
-          <form onSubmit={handleSubmit}>
-          <Grid container
-                direction="column"
-                justify="center"
-                alignItems="center"
-                className={classes.root}
-                spacing={4}
-          >
-            <Grid item>
-              <Typography variant="h4" component="h3" align="center">
-                <strong>Access Code</strong>
-              </Typography>
-            </Grid>
-            <Grid item>
-              <TextField
-                required
-                id="filled-bare"
-                placeholder={"Enter Full Name"}
-                margin="normal"
-                variant="filled"
-                onChange={(e)=> setFullName(e.target.value)}
-               />
-            </Grid>
-            <Grid item>
-              <TextField
-                required
-                id="filled-bare"
-                placeholder={location.state.role+" Access Code"}
-                margin="normal"
-                variant="filled"
-                onChange={(e)=> setAccessCode(e.target.value)}
-               />
-            </Grid>
-            <Grid>
+  return (
+    <>
+      <Appbar title={location.state.role} />
+      <form onSubmit={handleSubmit}>
+        <Grid container
+          direction="column"
+          justify="center"
+          alignItems="center"
+          className={classes.root}
+          spacing={4}
+        >
+          <Grid item>
+            <Typography variant="h4" component="h3" align="center">
+              <strong>Access Code</strong>
+            </Typography>
+          </Grid>
+          <Grid item>
+            <TextField
+              required
+              id="filled-bare"
+              placeholder={"Enter Full Name"}
+              margin="normal"
+              variant="filled"
+              onChange={(e) => setFullName(e.target.value)}
+            />
+          </Grid>
+          <Grid item>
+            <TextField
+              required
+              id="filled-bare"
+              placeholder={location.state.role + " Access Code"}
+              margin="normal"
+              variant="filled"
+              onChange={(e) => setAccessCode(e.target.value)}
+            />
+          </Grid>
+          <Grid>
             <Button type="submit">
               Submit
             </Button>
-            </Grid>
-          </Grid >
-          </form>
-      </>
-    )
+          </Grid>
+        </Grid >
+      </form>
+    </>
+  )
 }
 const mapDispatchToProps = { areaAction: setAreas }
 

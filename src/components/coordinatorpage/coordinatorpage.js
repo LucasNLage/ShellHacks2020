@@ -6,7 +6,7 @@ import Appbar from "../appbar/appbar.js";
 export default function VolunteerPage() {
     return (
         <div>
-            <Appbar type="coordinator" />
+            <Appbar title="Coordinator" type="coordinator" />
             <Grid
                 container
                 direction="column"
