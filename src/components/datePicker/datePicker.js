@@ -18,19 +18,11 @@ const useStyles = makeStyles((theme) => ({
 export default function DateAndTimePickers(props) {
   const classes = useStyles();
   const dateStr = props.title;
-
-  if (dateStr == "Start") {
-    return (
-      <form className={classes.container} noValidate>
-
-      </form>
-    );
-  } else {
     return (
       <form className={classes.container} noValidate>
         <TextField
           id="datetime-local"
-          label="End of Event"
+          label={dateStr}
           type="datetime-local"
           className={classes.textField}
           InputLabelProps={{
@@ -41,5 +33,4 @@ export default function DateAndTimePickers(props) {
         />
       </form>
     );
-  }
 }

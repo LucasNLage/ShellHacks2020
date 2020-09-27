@@ -74,7 +74,7 @@ export default function HomePage() {
             <div className="HomePage-button2">
                 <Button onClick={()=> history.push("/accesscode")}>Coordinator</Button>
             </div>
-            <ThemeProvider></ThemeProvider>
+            {/* <ThemeProvider></ThemeProvider> */}
             <AdminLink />
         </div>
 

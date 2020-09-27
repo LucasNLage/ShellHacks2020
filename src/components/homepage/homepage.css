@@ -58,15 +58,16 @@
 
   .HomePage-started{
     position: absolute;
-    width: 375px;
-    height: 38px;
-    left: 100px;
-    top: 170px;
+    width: 300px;
+    /* height: 20px; */
+    right: calc(50% - 452px/2);
+    /* left: calc(50% - 375px/2); */
+    top: 180px;
     
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
-    line-height: 40px;
+    line-height: 30px;
     /* or 58% */
     
     display: flex;
@@ -75,6 +76,7 @@
     letter-spacing: 0.15px;
     color: #000000;
   }
+
   
   .HomePage-text{
     position: absolute;
