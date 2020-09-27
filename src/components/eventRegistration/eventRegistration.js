@@ -9,6 +9,7 @@ import axios from "axios"
 import './eventRegistration.css';
 import { useState } from 'react';
 import Grid from '@material-ui/core/Grid';
+import { useHistory } from "react-router-dom";
 
 
 const utilStyles = makeStyles((theme) => ({
@@ -56,7 +57,8 @@ export default function EventRegistrationForm() {
   const [locationInput, setLocationInput] = useState(''); // '' is the initial state value
   const [dateInput, setDateInput] = useState(new Date()); // '' is the initial state value
   const [endDateInput, setEndDateInput] = useState(new Date()); // '' is the initial state value
-
+  let res;
+  let history = useHistory();
 
   function handleSubmit() {
     axios.post('/event', {
@@ -68,16 +70,12 @@ export default function EventRegistrationForm() {
     })
       .then(function (response) {
         console.log(response);
+        history.push("/eventconfirmation", { res: response.data });
       })
       .catch(function (error) {
         console.log(error);
       });
-
-    console.log("start date:", endDateInput)
-    console.log("sent form")
   }
-
-
   return (
     <Grid
       container
@@ -143,7 +141,6 @@ export default function EventRegistrationForm() {
         <Button
           className={utilStyle.button}
           onClick={() => { handleSubmit() }}>Submit</Button>
-
       </Grid>
     </Grid>
 
