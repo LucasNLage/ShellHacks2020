@@ -27,13 +27,19 @@ const utilStyles = makeStyles((theme) => ({
   date: {
       marginTop: '20px',
   },
+
+}));
+
+const useStyles = makeStyles((theme) => ({
+  margin: {
+    // margin: theme.spacing(1),
+
   margin: {
     marginTop: '10px',
     marginBottom: '10px',
     width: '18ch',
     background: "#F1F1F1",
     opacity: "0.90",
-
 
   },
   title: {
