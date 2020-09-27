@@ -71,7 +71,7 @@ export default function HomePage() {
             <div className="HomePage-button2">
                 <Button>Coordinator</Button>
             </div>
-            <ThemeProvider></ThemeProvider>
+            {/* <ThemeProvider></ThemeProvider> */}
             <AdminLink />
         </div>
 
