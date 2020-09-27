@@ -12,8 +12,7 @@ import {
     useHistory,
     useLocation
 } from "react-router-dom";
-
-
+import Appbar from "../appbar/appbar"
 const useStyles = makeStyles((theme) => ({
     root: {
         ...theme.typography.button,
@@ -79,66 +78,68 @@ export default function EventConfirmation(props) {
     let history = useHistory();
 
     function handleClick() {
-        history.push("/taskForm");
+        history.push("/taskRegistration");
     }
 
     return (
-        <Grid
-            container
-            direction="column"
-            justify="center"
-            alignItems="center"
-        >
-            <Grid item>
-                <Typography className={classes.title} variant="h3" align="center">Event has been created</Typography>
-                <Divider className={classes.divider} />
-            </Grid>
-            <Grid item>
-                <Typography className={classes.subtitle} variant="h6" align="center">Please use the codes below to get started</Typography>
-                <Divider className={classes.divider} />
-            </Grid>
-            <Grid item>
-                <Typography className={classes.textfields} variant="h6" align="center">Volunteers</Typography>
-                <TextField
-                    id="outlined-read-only-input"
-                    align="center"
-                    defaultValue={location.state.res.volunteer_access_code}
-                    InputProps={{
-                        readOnly: true,
-                    }}
-                    variant="outlined"
-                />
-                <FileCopyIcon
-                    className={classes.icon}
-                    onClick={() => { navigator.clipboard.writeText(location.state.res.volunteer_access_code) }} />
-            </Grid>
-            <Grid item>
-                <Typography className={classes.textfields} variant="h6" align="center">Coordinators</Typography>
-                <TextField
-                    id="outlined-read-only-input"
-                    className={classes.textfield}
-                    align="center"
-                    defaultValue={location.state.res.coordinator_access_code}
-                    InputProps={{
-                        readOnly: true,
-                    }}
-                    variant="outlined"
-                />
-                <FileCopyIcon
-                    className={classes.icon}
-                    onClick={() => { navigator.clipboard.writeText(location.state.res.coordinator_access_code) }} />
-            </Grid>
-            <Grid item>
-                <Link
-                    variant="body2"
-                    onClick={() => handleClick()
-                    }
-                >
-                    Create a task!
+        <>
+            <Appbar />
+            <Grid
+                container
+                direction="column"
+                justify="center"
+                alignItems="center"
+            >
+                <Grid item>
+                    <Typography className={classes.title} variant="h3" align="center">Event has been created</Typography>
+                    <Divider className={classes.divider} />
+                </Grid>
+                <Grid item>
+                    <Typography className={classes.subtitle} variant="h6" align="center">Please use the codes below to get started</Typography>
+                    <Divider className={classes.divider} />
+                </Grid>
+                <Grid item>
+                    <Typography className={classes.textfields} variant="h6" align="center">Volunteers</Typography>
+                    <TextField
+                        id="outlined-read-only-input"
+                        align="center"
+                        defaultValue={location.state.res.volunteer_access_code}
+                        InputProps={{
+                            readOnly: true,
+                        }}
+                        variant="outlined"
+                    />
+                    <FileCopyIcon
+                        className={classes.icon}
+                        onClick={() => { navigator.clipboard.writeText(location.state.res.volunteer_access_code) }} />
+                </Grid>
+                <Grid item>
+                    <Typography className={classes.textfields} variant="h6" align="center">Coordinators</Typography>
+                    <TextField
+                        id="outlined-read-only-input"
+                        className={classes.textfield}
+                        align="center"
+                        defaultValue={location.state.res.coordinator_access_code}
+                        InputProps={{
+                            readOnly: true,
+                        }}
+                        variant="outlined"
+                    />
+                    <FileCopyIcon
+                        className={classes.icon}
+                        onClick={() => { navigator.clipboard.writeText(location.state.res.coordinator_access_code) }} />
+                </Grid>
+                <Grid item>
+                    <Link
+                        variant="body2"
+                        onClick={() => handleClick()
+                        }
+                    >
+                        Create a task!
                 </Link>
-            </Grid>
+                </Grid>
 
-        </Grid >
-
+            </Grid >
+        </>
     );
 }
