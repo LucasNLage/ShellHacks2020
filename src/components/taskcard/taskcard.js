@@ -23,9 +23,9 @@ const useStyles = makeStyles({
   title: {
     fontSize: 14,
   },
-  pos: {
-    marginBottom: 12,
-  },
+  fab: {
+    marginLeft: 'auto',
+  }
 });
 
 export default function SimpleCard(props) {
@@ -56,6 +56,22 @@ export default function SimpleCard(props) {
               "other card"
             </Typography>
           </CardContent>
+          <CardActions>
+            <Grid container spacing={3}>
+              <Grid item xs={2}>
+                <Typography color="textSecondary">
+                  location
+                </Typography>
+              </Grid>
+              <Grid item xs={8}>
+              </Grid>
+              <Grid item xs={2}>
+                <Typography color="textSecondary">
+                  3/5
+                </Typography>
+              </Grid>
+            </Grid>
+          </CardActions>
         </Card>
         :
         <Card className={classes.root} onClick={() => { cardSelect() }} >
@@ -70,11 +86,27 @@ export default function SimpleCard(props) {
               "place holder for task"
             </Typography>
           </CardContent>
+          <CardActions>
+            <Grid container spacing={3}>
+              <Grid item xs={2}>
+                <Typography color="textSecondary">
+                  location
+                </Typography>
+              </Grid>
+              <Grid item xs={8}>
+              </Grid>
+              <Grid item xs={2}>
+                <Typography color="textSecondary">
+                  3/5
+                </Typography>
+              </Grid>
+            </Grid>
+          </CardActions>
         </Card>
       }
     </>
   );
 }
 
-// title
-// location
+    // title
+    // location

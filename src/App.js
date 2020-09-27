@@ -11,6 +11,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import VolunteerPage from './components/volunteerpage/volunteerpage';
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/">
-            <HomePage />
+            <VolunteerPage />
           </Route>
         </Switch>
       </Router >
