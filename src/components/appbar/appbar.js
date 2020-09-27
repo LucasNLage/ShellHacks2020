@@ -7,6 +7,7 @@ import InputBase from '@material-ui/core/InputBase';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import AddIcon from '@material-ui/icons/Add';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import SearchIcon from '@material-ui/icons/Search';
 
 const useStyles = makeStyles((theme) => ({
@@ -25,14 +26,8 @@ const useStyles = makeStyles((theme) => ({
             display: 'block',
         },
     },
-    searchIcon: {
-        // padding: theme.spacing(0, 2),
-        // height: '100%',
-        // position: 'absolute',
-        // pointerEvents: 'none',
-        // display: 'flex',
-        // alignItems: 'center',
-        // justifyContent: 'center',
+    backIcon: {
+        color: '#FFFFFF',
     },
     inputRoot: {
         // color: 'rgba(226,248,235,1)'
@@ -65,8 +60,8 @@ export default function Appbar(props) {
                 <AppBar position="static" >
                     <Toolbar variant="dense" className={classes.root}>
                         <IconButton edge="start" className={classes.menuButton} aria-label="menu">
-                            <MenuIcon />
-                        </IconButton>
+                            <ArrowBackIosIcon className={classes.backIcon}/>
+                        </IconButton >
 
                         <Typography variant="h6" color="inherit">
                             {props.eventName ? props.eventName : null}
@@ -83,14 +78,14 @@ export default function Appbar(props) {
                             color="inherit"
                             aria-label="open drawer"
                         >
-                            <MenuIcon />
+                            <ArrowBackIosIcon />
                         </IconButton>
                         <Typography className={classes.title} variant="h6" noWrap>
                             Event Name
                         </Typography>
                         <div className={classes.search}>
                             <div className={classes.searchIcon}>
-                                <AddIcon />
+                                {/* <AddIcon /> */}
                             </div>
                         </div>
                     </Toolbar>
