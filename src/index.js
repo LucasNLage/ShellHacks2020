@@ -10,8 +10,7 @@ axios.defaults.baseURL = 'http://165.22.38.77:3001';
 
 ReactDOM.render(
   <React.StrictMode>
-    <HomePage/>
-    {/* <App /> */}
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,12 +1,13 @@
 import React from 'react';
+import logo from './logo.svg';
 import './App.css';
-
 import HomePage from './components/homepage/homepage.js'
 import VolunteerPage from './components/volunteerpage/volunteerpage.js'
 import CoordinatorPage from './components/coordinatorpage/coordinatorpage.js'
 import EventRegistrationForm from './components/eventRegistration/eventRegistration.js'
 import AdminLink from './components/links/adminLink.js'
 import { makeStyles } from '@material-ui/core/styles';
+import AreaPage from "./components/areapage/areapage.js"
 
 
 
@@ -16,9 +17,6 @@ import {
   Route,
   Link
 } from "react-router-dom";
-
-import VolunteerPage from './components/volunteerpage/volunteerpage';
-import AreaPage from './components/areapage/areapage';
 
 // 165.22.38.77:3001
 
@@ -40,11 +38,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/">
-
-            <VolunteerPage />
-           {/* <AreaPage />*/}
-
-           {/* <HomePage />*/}
+            <HomePage />
           </Route>
           <Route path="/volunteerAccessCode">
             <VolunteerPage />

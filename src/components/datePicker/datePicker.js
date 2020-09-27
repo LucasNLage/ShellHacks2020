@@ -15,80 +15,31 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
-// function renderComponent(props) {
-//   const dateStr = props.title;
-//   if (dateStr === 'Start') {
-//     return (
-//     <TextField
-//     id="datetime-local"
-//     label="Start of Event"
-//     type="datetime-local"
-//     defaultValue="2020-08-27T10:30"
-//     className={classes.textField}
-//     InputLabelProps={{
-//       shrink: true,
-//     }}
-//     value={dateInput}
-//     onInput={e => setDateInput(e.target.value)}
-//   />
-//  {console.log("Date:", dateInput)}
-//  );
-//   } else {
-//     return null;
-//   }
-// }
-
 export default function DateAndTimePickers(props) {
   const classes = useStyles();
   const dateStr = props.title;
-  const [dateInput, setDateInput] = useState(''); // '' is the initial state value
-  const [endDateInput, setEndDateInput] = useState(''); // '' is the initial state value
 
-  if(dateStr == "Start"){
+  if (dateStr == "Start") {
     return (
       <form className={classes.container} noValidate>
-         
+
       </form>
     );
-  }else{
+  } else {
     return (
       <form className={classes.container} noValidate>
-          <TextField
-            id="datetime-local"
-            label="End of Event"
-            type="datetime-local"
-            defaultValue="2020-08-27T10:30"
-            className={classes.textField}
-            InputLabelProps={{
-              shrink: true,
-            }}
-            value={endDateInput}
-            onInput={e => setEndDateInput(e.target.value)}
-          />
+        <TextField
+          id="datetime-local"
+          label="End of Event"
+          type="datetime-local"
+          className={classes.textField}
+          InputLabelProps={{
+            shrink: true,
+          }}
+          value={props.value}
+          onInput={e => props.handleInputChange(e.target.value)}
+        />
       </form>
     );
   }
-  
-
 }
-
-
-// export default function DateAndTimePickers(props) {
-//   const classes = useStyles();
-
-//   return (
-//     // <form className={classes.container} noValidate>
-//     //   <TextField
-//     //     id="datetime-local"
-//     //     label="Date of Event"
-//     //     type="datetime-local"
-//     //     defaultValue="2020-08-27T10:30"
-//     //     className={classes.textField}
-//     //     InputLabelProps={{
-//     //       shrink: true,
-//     //     }}
-//     //   />
-//     // </form>
-//   );
-// }
