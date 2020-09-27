@@ -17,7 +17,7 @@ const useStyles = makeStyles({
   },
   selected: {
     minWidth: 275,
-    marginTop: 10,
+    marginTop: 30,
     marginBottom: 10,
     background: "rgb(226,248,235)",
     background: "linear-gradient(180deg, rgba(226,248,235,1) 0%, rgba(226,248,235,1) 40%, rgba(244,244,244,1) 100%)"
@@ -37,19 +37,17 @@ const useStyles = makeStyles({
 
 export default function SimpleCard(props) {
 
-  const [selected, setSelected] = useState(false)
+  // const [selected, setSelected] = useState(false)
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
 
   function cardSelect() {
-    let temp = selected;
-    setSelected(!temp);
-    console.log("selected: ", selected);
+    props.handleSelected(props.id);
   }
 
   return (
     <>
-      {selected
+      {props.selected
         ?
         <Card className={classes.selected} elevation={8} onClick={() => { cardSelect() }}>
           <CardContent>

@@ -12,6 +12,7 @@ import {
   Link
 } from "react-router-dom";
 import VolunteerPage from './components/volunteerpage/volunteerpage';
+import AreaPage from './components/areapage/areapage';
 // 165.22.38.77:3001
 
 function App() {
@@ -32,7 +33,8 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/">
-            <VolunteerPage />
+            {/* <VolunteerPage /> */}
+            <AreaPage />
           </Route>
         </Switch>
       </Router >

@@ -56,8 +56,8 @@ export default function Appbar(props) {
 
 
     let appbarType = props;
-    console.log("props", props)
-    console.log("appbarType", appbarType)
+    // console.log("props", props)
+    // console.log("appbarType", appbarType)
     return (
         <>
             {(props.type === "coordinator")
