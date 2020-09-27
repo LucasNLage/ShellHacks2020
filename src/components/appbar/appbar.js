@@ -9,6 +9,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import AddIcon from '@material-ui/icons/Add';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import SearchIcon from '@material-ui/icons/Search';
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -53,6 +54,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Appbar(props) {
     const classes = useStyles();
 
+    let history = useHistory();
 
     let appbarType = props;
     return (
@@ -62,15 +64,15 @@ export default function Appbar(props) {
                 <AppBar position="static" >
                     <Toolbar variant="dense" className={classes.root}>
                         <IconButton edge="start" className={classes.menuButton} aria-label="menu">
-                            <ArrowBackIosIcon className={classes.backIcon}/>
+                            <ArrowBackIosIcon className={classes.backIcon} />
                         </IconButton >
                         {/* <Typography className={classes.title} variant="h6" noWrap>
                             Event Name
                         </Typography> */}
                         <Typography variant="h6" color="inherit">
-                            {props.eventName ? props.eventName : null} 
+                            {props.eventName ? props.eventName : null}
 
-                     </Typography>
+                        </Typography>
                     </Toolbar>
                 </AppBar>
                 :
@@ -82,12 +84,12 @@ export default function Appbar(props) {
                             color="inherit"
                             aria-label="open drawer"
                         >
-                            <ArrowBackIosIcon />
+                            <ArrowBackIosIcon onClick={() => history.goBack()} />
                         </IconButton>
                         <Typography className={classes.title} variant="h6" noWrap>
                             {props.title}
                         </Typography>
-            
+
                     </Toolbar>
                 </AppBar>
             }

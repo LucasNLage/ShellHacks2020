@@ -77,7 +77,7 @@ export default function EventRegistrationForm() {
     }
     return (
         <>
-            <Appbar title="New Task Form"/>
+            <Appbar title="New Task Form" />
             <Grid
                 container
                 direction="column"
@@ -94,14 +94,14 @@ export default function EventRegistrationForm() {
                         value={taskInput}
                         onInput={e => setTaskInput(e.target.value)}
                         id="Task-name"
-                        label="Task Name"
+                        label="Task Name?"
                     />
                 </Grid>
                 <Grid item>
                     <TextField
                         className={utilStyle.margin}
                         id="description"
-                        label="Description"
+                        label="Description?"
                         value={description}
                         onInput={e => setDescription(e.target.value)}
                     />
@@ -110,7 +110,7 @@ export default function EventRegistrationForm() {
                     <TextField
                         className={utilStyle.margin}
                         id="maxVol"
-                        label="maxVol"
+                        label="How many volunteers are needed?"
                         value={maxVol}
                         onInput={e => setMaxVol(e.target.value)}
                     />
@@ -119,7 +119,7 @@ export default function EventRegistrationForm() {
                     <TextField
                         className={utilStyle.margin}
                         id="location"
-                        label="Location"
+                        label="Location?"
                         value={locationInput}
                         onInput={e => setLocationInput(e.target.value)}
                     />
@@ -129,7 +129,7 @@ export default function EventRegistrationForm() {
                         className={utilStyle.button}
                         onClick={() => { handleSubmit() }}>Submit</Button>
                 </Grid>
-                
+
             </Grid>
         </>
     );
