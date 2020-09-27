@@ -41,7 +41,8 @@ export default function ButtonLink() {
   return (
     <div className={classes.root}>
       <Typography >Creating an event?</Typography>
-      <Link
+      <Link 
+        className={classes.link}
         variant="body2"
         onClick={() => handleClick()}
       >
