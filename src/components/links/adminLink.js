@@ -23,7 +23,7 @@ export default function ButtonLink() {
     <Link
       component="button"
       variant="body2"
-      onClick={EventRegistrationForm}
+    //   onClick={}
     >
       Click here
     </Link>
